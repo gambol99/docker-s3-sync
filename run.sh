@@ -29,7 +29,7 @@ EOF
 while [ $# -ne 0 ]; do
   case "$1" in
     --output-dir|-o)    OUTPUT_DIR=$2; shift 2 ;;
-    --files|-f)         SYNC_FILES="$SYNC_FILES $2"; shift ;;
+    --file|-f)          SYNC_FILES="$SYNC_FILES $2"; shift ;;
     --bucket|-b)        AWS_BUCKET=$2; shift 2 ;;
     --interval|-i)      INTERVAL=$2;   shift 2 ;;
     --help|-h)          usage; ;;

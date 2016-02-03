@@ -44,10 +44,10 @@ echo "synchronization from: $AWS_BUCKET, dest: ${OUTPUT_DIR} internal: ${INTERVA
 
 while true; do
   if [ -z "$SYNC_FILES" ]; then
-    echo aws s3 sync --only-show-errors ${AWS_BUCKET} ${OUTPUT_DIR}
+    aws s3 sync --only-show-errors ${AWS_BUCKET} ${OUTPUT_DIR}
   else
     for _filename in $SYNC_FILES; do
-      echo aws s3 cp --only-show-errors ${AWS_BUCKET}/${_filename} ${OUTPUT_DIR}
+      aws s3 cp --only-show-errors ${AWS_BUCKET}/${_filename} ${OUTPUT_DIR}
     done
   fi
   sleep $INTERVAL

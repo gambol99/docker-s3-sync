@@ -40,6 +40,6 @@ echo "synchronization from: $AWS_BUCKET, dest: ${OUTPUT_DIR} internal: ${INTERVA
 [ -z "${OUTPUT_DIR}" ] && usage "you have not specified a output directory"
 
 while true; do
-  aws s3 sync --only-show-errors=true ${AWS_BUCKET} ${OUTPUT_DIR}
+  aws s3 sync --only-show-errors ${AWS_BUCKET} ${OUTPUT_DIR}
   sleep $INTERVAL
 done
